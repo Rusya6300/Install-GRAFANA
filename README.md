@@ -1,4 +1,10 @@
+# LAB1_Установка Docker на Oracle Linux
+Начал с установки пакета `wget`, используя команду `sudo yum install wget`, данный пакет даёт возможность загружать файлы из интернета
+
 ![image](https://github.com/user-attachments/assets/0a360e80-de3a-4ba4-ba61-820676431910)
+
+2.Следом установил пакет `curl` с помощью команды ``sudo yum install curl``. Данный пакет даёт возможность отправлять HTTP/HTTPS запросы.
+
 ![image](https://github.com/user-attachments/assets/f6dbb177-d27d-4afc-93b4-fc0fdf355471)
 ![image](https://github.com/user-attachments/assets/a22d9f73-91be-4fc3-9c71-58cbb08edcc5)
 <
