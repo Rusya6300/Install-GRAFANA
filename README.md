@@ -56,3 +56,38 @@
 15. Запускаем Docker Compose в фоновом режиме с помощью `sudo docker compose up -d`
 
 ![image](https://github.com/user-attachments/assets/34ae7c85-8e92-4a6e-a453-fe766bc3c08d)
+
+16. Заходим в браузер и переходим по адресу <b> localhost:3000</b>
+
+Вводим
+
+<b>Логин:</b> admin
+
+<b>Пароль:</b> admin
+
+![image](https://github.com/user-attachments/assets/a13e7c00-1225-4d30-910c-714e50bfa832)
+
+17. Попадаем на страницу <b>Home</b>
+
+![image](https://github.com/user-attachments/assets/9639c08f-ecf0-41c7-a804-92f37276c9f7)
+
+18. Заходим в конфигурационный файл докера с помощью команды `vi docker-compose.yaml`
+
+![image](https://github.com/user-attachments/assets/def93501-3bc7-4d8e-aa6a-078f3b0ea08c)
+
+19. Выходим вписав команду `:wq`
+
+![image](https://github.com/user-attachments/assets/e8f57f3f-bd5e-43d5-93f6-06a3fe62ebe1)
+
+20. Запускаем grafana с помощью  `sudo docker compose up -d`
+
+![image](https://github.com/user-attachments/assets/96fac0e6-4f00-42b3-8d47-f10058fe6867)
+
+21. Чтобы остановить grafana понадобится команда `sudo docker compose stop`
+
+![image](https://github.com/user-attachments/assets/f4cc977a-9d1c-4dff-ae7a-a7298a536889)
+
+22. А чтобы полностью остановить grafana понадобится команда `sudo docker compose down`
+
+![image](https://github.com/user-attachments/assets/e96c1a50-34c0-469f-9c6c-bfd83fe61951)
+
