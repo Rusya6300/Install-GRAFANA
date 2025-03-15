@@ -93,3 +93,13 @@
 
 # Prometheus
 
+23. Скопировал конфигурационные файлы с github командой `sudo git clone https://github.com/Rusya6300/Install-GRAFANA.git`
+
+![image](https://github.com/user-attachments/assets/60ebd695-ae16-4069-b8de-e517239d20e0)
+
+24. Проверил, что репозиторий успешно установился командой `ls`
+
+![image](https://github.com/user-attachments/assets/f4e50f71-3b3b-425f-a37c-1c84f023e679)
+
+![image](https://github.com/user-attachments/assets/24836b08-8e5a-41a4-9c0f-0c0a7851c7db)
+
