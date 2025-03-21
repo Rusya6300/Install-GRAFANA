@@ -101,5 +101,37 @@
 
 ![image](https://github.com/user-attachments/assets/f4e50f71-3b3b-425f-a37c-1c84f023e679)
 
+25. копируем конфигурационный файл докера используя команду `cp docker-compose.yaml /home/ruslan/`
+
 ![image](https://github.com/user-attachments/assets/24836b08-8e5a-41a4-9c0f-0c0a7851c7db)
 
+Здесь у меня возникла проблема с копированием файла `prometheus.yaml` 
+
+![image](https://github.com/user-attachments/assets/e54118b3-de49-48ae-902d-d4571e3a0e06)
+
+И тогда я перешел в директорию где расположен файл и скопировал его оттуда 
+
+![image](https://github.com/user-attachments/assets/ec02ccd8-b6f2-4273-93a1-6c92c6196ded)
+
+Проверил, скопировались ли файлы командой `ls`
+
+![image](https://github.com/user-attachments/assets/cb53c362-a9c0-4fc7-97f7-ab3b05ab87af)
+
+26. Переносим конфигурационный файл prometheus.yaml в конфиг Grafana используя команду `mv prometheus.yaml /mnt/common_volume/swarm/grafana/config`
+
+![image](https://github.com/user-attachments/assets/afcd4825-d8cc-4f8a-908e-8f79feb395c8)
+
+27. Проверяем наличие файла командой `ls`
+
+![image](https://github.com/user-attachments/assets/85f8da82-d7e1-45ac-aa42-d01bb93177d7)
+
+28. Запускаем docker compose в фоном режиме командой `sudo docker compose up -d`
+
+![image](https://github.com/user-attachments/assets/0d842259-9f02-4b9a-983b-4ee10b54ee42)
+
+29. Переходим по адресу <b> localhost:3000</b>
+
+![image](https://github.com/user-attachments/assets/98cb51a0-f8fd-451b-9a19-a59357faca58)
+
+
+![image](https://github.com/user-attachments/assets/8a47906c-f20f-4571-9431-2a9eed1467e8)
