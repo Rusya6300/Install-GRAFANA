@@ -105,37 +105,107 @@
 
 ![image](https://github.com/user-attachments/assets/f4e50f71-3b3b-425f-a37c-1c84f023e679)
 
-25. копируем конфигурационный файл докера используя команду `cp docker-compose.yaml /home/ruslan/`
+25. копируем конфигурационный файл докера используя команду `cp docker-compose.yaml /home/ruslan/grafana_stack_for_docker/`
 
-![image](https://github.com/user-attachments/assets/24836b08-8e5a-41a4-9c0f-0c0a7851c7db)
+![image](https://github.com/user-attachments/assets/92746a94-81f2-4c15-ba62-f6614e9bd405)
 
-Здесь у меня возникла проблема с копированием файла `prometheus.yaml` 
+26. Тоже самое делаем с файлом prometheus.yuml комагдой `cp prometheus.yuml /home/ruslan/grafana_stack_for_docker/`
 
-![image](https://github.com/user-attachments/assets/e54118b3-de49-48ae-902d-d4571e3a0e06)
+![image](https://github.com/user-attachments/assets/b5057868-3bdc-43d9-9439-a78f7765f34e)
 
-И тогда я перешел в директорию где расположен файл и скопировал его оттуда 
 
-![image](https://github.com/user-attachments/assets/ec02ccd8-b6f2-4273-93a1-6c92c6196ded)
-
-Проверил, скопировались ли файлы командой `ls`
-
-![image](https://github.com/user-attachments/assets/cb53c362-a9c0-4fc7-97f7-ab3b05ab87af)
-
-26. Переносим конфигурационный файл prometheus.yaml в конфиг Grafana используя команду `mv prometheus.yaml /mnt/common_volume/swarm/grafana/config`
+27. Переносим конфигурационный файл prometheus.yaml в конфиг Grafana используя команду `mv prometheus.yaml /mnt/common_volume/swarm/grafana/config`
 
 ![image](https://github.com/user-attachments/assets/afcd4825-d8cc-4f8a-908e-8f79feb395c8)
 
-27. Проверяем наличие файла командой `ls`
+28. Проверяем наличие файла командой `ls`
 
 ![image](https://github.com/user-attachments/assets/85f8da82-d7e1-45ac-aa42-d01bb93177d7)
 
-28. Запускаем docker compose в фоном режиме командой `sudo docker compose up -d`
+29. Запускаем docker compose в фоном режиме командой `sudo docker compose up -d`
 
 ![image](https://github.com/user-attachments/assets/0d842259-9f02-4b9a-983b-4ee10b54ee42)
 
-29. Переходим по адресу <b> localhost:3000</b>
+30. Переходим по адресу <b> localhost:3000</b>
+
+В меню выбираем вкладку Dashboards и создаем Dashboard
+
+жмем кнопку `+Add visualization`, а после `Configure a new data source`
+
+выбираем Prometheus
 
 ![image](https://github.com/user-attachments/assets/98cb51a0-f8fd-451b-9a19-a59357faca58)
 
+Заполняем данные в открывшемся окне
+
+Пункт Connection
+
+http://prometheus:9090
+
+Пункт Authentication
+
+Basic authentication
+
+User: admin
+
+Password: admin
+
+Нажимаем на `Save & test` и должно показывать зелёную галочку
+
+в меню выбираем вкладку Dashboards и создаем Dashboard
+
+жмем кнопку `Import dashboard`
+
+![image](https://github.com/user-attachments/assets/cc39b2f6-10c4-4287-9771-39326743e1b4)
+
+В пункт Find and import dashboards for common applications at grafana.com/dashboards:
+
+вписываем `1860`
 
 ![image](https://github.com/user-attachments/assets/8a47906c-f20f-4571-9431-2a9eed1467e8)
+
+жмем кнопку `Load`
+
+Select Prometheus нажимаем кнопку `Import`
+
+В итоге открывается такой Dashboard для мониторинга загрузки ОС
+
+![image](https://github.com/user-attachments/assets/513247b1-12c2-453e-9e6d-f1517650bff9)
+
+# Victoria
+
+Вводим команду `echo -e "# TYPE light_metric1 gauge\nlight_metric1 0" | curl --data-binary @- http://localhost:8428/api/v1/import/prometheus` которая, отправляет бинарные данные на локальный сервер, который слушает на порту 8428.
+
+![image](https://github.com/user-attachments/assets/87fc18fb-c03f-4711-b111-3b57d191ec43)
+
+Переходим в браузере по ссылке `http://localhost:8428/`, открывается такое меню в нём нужно выбрать vmui
+
+![image](https://github.com/user-attachments/assets/69f32261-344d-47bb-b5dd-b4cad827b056)
+
+Вписываем `light_metric1` и нажимаем Execute Query
+
+![image](https://github.com/user-attachments/assets/10ed1e14-5ef5-4fe3-aa25-213f104c33cf)
+
+Переходим на `http://localhost:3000` выбираем Dashboard и нажимаем `New Dashboard`, далее `Add Visualization`
+
+![image](https://github.com/user-attachments/assets/ddba7d9b-26c9-40ff-902e-968e94442a62)
+
+Нажимаем `Configure a new data source` и выбираем Prometheus
+
+Вписываем:
+
+Name: vik
+
+Connection: http://victoriametrics:8428
+
+Нажимаем `Save & Test`
+
+![image](https://github.com/user-attachments/assets/036c61b0-8d18-4a08-bf3e-a3ed35a41e7f)
+
+Вписываем `light_metric1`
+
+![image](https://github.com/user-attachments/assets/cbab183e-ffea-485b-b8c5-77c885688694)
+
+Выходит панель с графиком, где есть активность light_metric1
+
+![image](https://github.com/user-attachments/assets/143f0138-56f0-4e6f-a9bb-c267bd75e158)
