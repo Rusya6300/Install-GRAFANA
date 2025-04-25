@@ -209,3 +209,14 @@ Connection: http://victoriametrics:8428
 Выходит панель с графиком, где есть активность light_metric1
 
 ![image](https://github.com/user-attachments/assets/143f0138-56f0-4e6f-a9bb-c267bd75e158)
+
+----------------------------------------------------------------------------------
+# Вторая вмка
+
+Устанвоил wget и curl
+
+![image](https://github.com/user-attachments/assets/bf7d023b-2cd2-47c2-957a-b1ca655afd4e)
+
+Так же установил git
+
+![image](https://github.com/user-attachments/assets/3bbf8d87-3352-4a28-9957-58ca627c31aa)
