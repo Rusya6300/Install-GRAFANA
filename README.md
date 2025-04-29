@@ -213,10 +213,27 @@ Connection: http://victoriametrics:8428
 ----------------------------------------------------------------------------------
 # Вторая вмка
 
-Устанвоил wget и curl
+Установил wget и curl
 
 ![image](https://github.com/user-attachments/assets/bf7d023b-2cd2-47c2-957a-b1ca655afd4e)
 
 Так же установил git
 
 ![image](https://github.com/user-attachments/assets/3bbf8d87-3352-4a28-9957-58ca627c31aa)
+
+Установил tar для работы с архивами
+
+![image](https://github.com/user-attachments/assets/c6692bc6-330c-4484-b226-fbd664ab8e9e)
+
+
+
+![image](https://github.com/user-attachments/assets/ba914513-a21d-4a66-a857-4f59e636f02d)
+
+
+![image](https://github.com/user-attachments/assets/6e57b3e9-3626-4fb4-b352-bd262eb966bd)
+
+
+![image](https://github.com/user-attachments/assets/7ba9e111-aff3-438f-b10b-0ee48436a56f)
+
+![image](https://github.com/user-attachments/assets/9458ca10-de92-4f5d-a856-7eb0d2f19e82)
+
